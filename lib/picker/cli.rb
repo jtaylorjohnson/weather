@@ -7,9 +7,7 @@ class Cli
         puts " "
         @input = gets.strip.downcase
         Api.get_weather(@input)
-        binding.pry
-        puts "The current condition is #{Place.weather}"
-
+       
     end
 
 
