@@ -15,7 +15,7 @@ class Cli
         puts " "
         puts "It is currently #{Place.all[0].weather} in #{Place.all[0].title}." 
         puts " "
-        puts "To see #{Place.all[0].title}'s current Temperature and Humidity type 'yes'."
+        puts "To see #{Place.all[0].title}'s current Temperature and Humidity type 'yes'. Or 'source' for the source of this information."
         @input = gets.strip.downcase.split.first
         puts " "
         if @input == "source"
