@@ -5,8 +5,13 @@ class Cli
         puts " "
         puts "Enter a Place to see Weather"
         puts " "
-        @place = gets.strip.down
-        Api.get_weather(@place)
+        @input = gets.strip.downcase
+        Api.get_weather(@input)
+        binding.pry
+        puts "The current condition is #{Place.weather}"
+
     end
 
+
 end
+ 
