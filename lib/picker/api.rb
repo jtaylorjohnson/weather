@@ -12,7 +12,8 @@ class Api
         url = "https://www.metaweather.com/api/location/#{id}"
         response = HTTParty.get(url)
         weather = response["consolidated_weather"][0]["weather_state_name"]
-        temp = response["consolidated_weather"][0]["the_temp"]
+        temp1 = response["consolidated_weather"][0]["the_temp"]
+        temp = temp1.round(2)
         humidity = response["consolidated_weather"][0]["humidity"]
         title = response["title"]
         source = response["sources"][0]["title"]
