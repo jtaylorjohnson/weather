@@ -4,8 +4,18 @@ class Api
         Place.destroy_all
         url = "https://www.metaweather.com/api/location/search/?query=#{string}"
         response = HTTParty.get(url)
+        #binding.pry
+        if response.empty?
+            puts " "
+            puts "Invalid input. Please enter the name of a major city."
+            puts " "
+            @input = gets.strip.downcase.split.first
+            self.find_location(@input)
+        else
+        #binding.pry
         id = response[0]["woeid"]
         self.get_weather(id)
+        end
     end
 
     def self.get_weather(id)
