@@ -1,9 +1,13 @@
 class Place
-    attr_accessor :weather
+    attr_accessor :weather, :temp, :title, :humidity, :source
     @@all = []
 
-    def initialize(weather)
+    def initialize(weather:, temp:, title:, humidity:, source:)
         @weather = weather
+        @temp = temp
+        @title = title
+        @humidity = humidity
+        @source = source
         @@all <<self
     end
 
@@ -11,8 +15,8 @@ class Place
         @@all
     end
 
-    def self.weather
-        @weather
+    def self.destroy_all
+        self.all.clear
     end
-    
+
 end
