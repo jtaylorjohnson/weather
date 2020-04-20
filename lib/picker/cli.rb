@@ -14,6 +14,7 @@ class Cli
         Api.find_location(input)
         puts " "
         puts "It is currently #{Place.all[0].weather} in #{Place.all[0].title}."
+        binding.pry 
         puts " "
         puts "To see #{Place.all[0].title}'s current Temperature and Humidity type 'yes'."
         if gets.strip.downcase == "source"

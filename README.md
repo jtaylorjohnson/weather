@@ -4,6 +4,12 @@ A ruby CLI in which you can input a major city and weather info will be output, 
 
 
 
+Install Instructions
+
+Run weather
+
+
+
 Built With
 
 https://www.metaweather.com/api
