@@ -16,14 +16,19 @@ class Cli
         puts "It is currently #{Place.all[0].weather} in #{Place.all[0].title}." 
         puts " "
         puts "To see #{Place.all[0].title}'s current Temperature and Humidity type 'yes'."
-        if gets.strip.downcase == "source"
+        @input = gets.strip.downcase.split.first
+        puts " "
+        if @input == "source"
             puts "This information comes from #{Place.all[0].source}."
-            new_or_exit
-        elsif gets.strip.downcase == "yes"
             puts " "
+            new_or_exit
+        elsif @input == "yes"
             puts "It is Currently #{Place.all[0].temp}°C with a Humidity of #{Place.all[0].humidity}% in #{Place.all[0].title}."
             puts " "
             new_or_exit
+        elsif @input == "exit"
+            puts "Goodbye!"
+            puts " "
         else
             new_or_exit
         end
@@ -32,12 +37,16 @@ class Cli
     def new_or_exit
         puts "Enter another City or 'exit' to Exit."
         @input = gets.strip.downcase.split.first
+        puts " "
         if @input == "source"
             puts "This information comes from #{Place.all[0].source}."
+            puts " "
             new_or_exit
         elsif @input != "exit"
             get_weather(@input)
-        else puts "Goodbye!"
+        else 
+            puts "Goodbye!"
+            puts " "
         end
     end
 
