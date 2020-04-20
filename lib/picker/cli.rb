@@ -11,7 +11,6 @@ class Cli
     end
 
     def get_weather(input)
-        binding.pry
         Api.find_location(input)
         puts " "
         puts "It is currently #{Place.all[0].weather} in #{Place.all[0].title}."
@@ -23,10 +22,15 @@ class Cli
             puts " "
             puts "Enter another City or 'exit' to Exit."
             @newinput = gets.strip.downcase
+            if @newinput != "exit"
             get_weather(@newinput)
-        else puts "Enter another City or 'exit' to Exit."
+            else puts "Goodbye!"
+        else
+            puts "Enter another City or 'exit' to Exit."
             @newinput = gets.strip.downcase
+            if @newinput != "exit"
             get_weather(@newinput)
+            else puts "Goodbye!"
         end
     end 
 
