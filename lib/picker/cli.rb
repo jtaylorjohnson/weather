@@ -13,8 +13,7 @@ class Cli
     def get_weather(input)
         Api.find_location(input)
         puts " "
-        puts "It is currently #{Place.all[0].weather} in #{Place.all[0].title}."
-        binding.pry 
+        puts "It is currently #{Place.all[0].weather} in #{Place.all[0].title}." 
         puts " "
         puts "To see #{Place.all[0].title}'s current Temperature and Humidity type 'yes'."
         if gets.strip.downcase == "source"
